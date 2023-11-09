@@ -7,7 +7,12 @@ std::mt19937 gen(0);
 std::mt19937 gen_no_reset(rd());
 
 
-float sigma(float x)
+float relu(float x)
+{
+	return x > 0 ? x : 0;
+}
+
+float sigmoid(float x)
 {
 	return 1/(exp(-x) + 1);
 }

@@ -11,8 +11,9 @@ constexpr float HalfPI = PI * 0.5f;
 constexpr float RAD_TO_DEG = 57.2958f;
 
 
+float relu(float x);
 
-float sigma(float x);
+float sigmoid(float x);
 
 std::vector<float> softmax(std::vector<float> X);
 
