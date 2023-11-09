@@ -7,6 +7,25 @@ std::mt19937 gen(0);
 std::mt19937 gen_no_reset(rd());
 
 
+float sigma(float x)
+{
+	return 1/(exp(-x) + 1);
+}
+
+std::vector<float> softmax(std::vector<float> X)
+{
+	std::vector<float> res;
+	float sum = 0;
+	for (float x : X) {
+		sum += exp(x);
+	}
+	sum = 1 / sum;
+	for (float x : X) {
+		res.push_back(x * sum);
+	}
+	return res;
+}
+
 void resetRand()
 {
 	gen = std::mt19937(0);
@@ -115,3 +134,5 @@ sf::RectangleShape getLine(const sf::Vector2f& point_1, const sf::Vector2f& poin
 
 	return line;
 }
+
+

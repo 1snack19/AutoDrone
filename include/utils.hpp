@@ -12,6 +12,10 @@ constexpr float RAD_TO_DEG = 57.2958f;
 
 
 
+float sigma(float x);
+
+std::vector<float> softmax(std::vector<float> X);
+
 void resetRand();
 
 
